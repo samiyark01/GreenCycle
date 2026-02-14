@@ -1,0 +1,19 @@
+<h2>My Pickup Reqests</h2>
+<h3>Your Eco Points:
+    {{profile.eco_points}}</h3>
+{% if pickups %}
+    <ul>
+        {% for pickup in pickups %}
+            <li>
+<strong>{{pickup.item_name}}</strong>-
+                {{pickup.quantity}}-
+                {{pickup.status}}-
+                {{pickup.request_at}}
+            </li>>
+        {% endfor %}        
+    </ul>
+{% else %}
+<p>No pickup requests yet.</p>
+{% endif %}  
+<br>
+<a href="{% url 'create_pickup' %}">Create New Pickup</a>  
